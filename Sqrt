@@ -1,1 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    float num, guess, sqrt;
+
+    printf("Enter a number: ");
+    scanf("%f", &num);
+
+    guess = num / 2;
+    sqrt = 0;
+
+    while (sqrt != guess) {
+        sqrt = guess;
+        guess = (num / guess + guess) / 2;
+    }
+
+    printf("Square root of %.2f = %.5f\n", num, sqrt);
+
+    return 0;
+}
 
