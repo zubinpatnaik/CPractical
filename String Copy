@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void copyString(char source[], char destination[]) {
+    int i = 0;
+    while (source[i] != '\0') {
+        destination[i] = source[i];
+        i++;
+    }
+    destination[i] = '\0';
+}
+
+int main() {
+    char str[100], copyStr[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    copyString(str, copyStr);
+    printf("Copied string: %s\n", copyStr);
+
+    return 0;
+}
