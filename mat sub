@@ -1,1 +1,44 @@
+#include <stdio.h>
+
+void matrixSubtraction(int mat1[][100], int mat2[][100], int res[][100], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            res[i][j] = mat1[i][j] - mat2[i][j];
+        }
+    }
+}
+
+int main() {
+    int mat1[100][100], mat2[100][100], res[100][100];
+    int rows, cols;
+
+    printf("Enter the number of rows and columns of the matrices: ");
+    scanf("%d %d", &rows, &cols);
+
+    printf("Enter the elements of the first matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+
+    printf("Enter the elements of the second matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &mat2[i][j]);
+        }
+    }
+
+    matrixSubtraction(mat1, mat2, res, rows, cols);
+
+    printf("Resultant matrix after subtraction:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", res[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
 
