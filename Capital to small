@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char c;
+
+    printf("Enter an uppercase letter: ");
+    scanf("%c", &c);
+
+    if (c >= 'A' && c <= 'Z') {
+        c = c + 32;
+        printf("Equivalent lowercase letter: %c\n", c);
+    } else {
+        printf("Invalid input. Please enter an uppercase letter.\n");
+    }
+
+    return 0;
+}
