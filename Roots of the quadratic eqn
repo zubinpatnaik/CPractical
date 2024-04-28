@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  float a, b, c;
+  float discrm, root1, root2;
+  
+  printf("Enter the numbers: ");
+  scanf("%f %f %f", &a, &b, &c);
+
+  discrm = b * b - 4 * (a*c);
+
+  if (discrm > 0){
+    root1 = (- b - sqrt(discrm))/ ( 2 * a); 
+    root2 = (- b + sqrt(discrm))/ ( 2 * a);
+    printf("The roots of the equation are real and unequal: %.2f and %.2f ", root1, root2);
+  }
+  if (discrm == 0){
+    root1=root2= -b / (2 * a);
+    printf("The roots of the equation are real and equal: %.2f and %.2f", root1, root2);
+    }
+  if (discrm < 0){
+    printf("The roots of the equation are imaginary.");
+    }
+  return 0;
+}  
