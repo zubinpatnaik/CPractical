@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+double squareRoot(double num, double guess, double precision) {
+    if (num - (guess * guess) <= precision) {
+        return guess;
+    } else {
+        return squareRoot(num, (guess + (num / guess)) / 2, precision);
+    }
+}
+
+int main() {
+    double num, guess, precision;
+
+    printf("Enter a number: ");
+    scanf("%lf", &num);
+
+    guess = num / 2;
+    precision = 0.00001;
+
+    printf("Square root of %.2lf: %.5lf\n", num, squareRoot(num, guess, precision));
+
+    return 0;
+}
