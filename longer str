@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int stringLength(char str[]) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+}
+
+void findLongerString(char str1[], char str2[]) {
+    int len1 = stringLength(str1);
+    int len2 = stringLength(str2);
+
+    if (len1 > len2) {
+        printf("Longer string: %s\n", str1);
+    } else if (len2 > len1) {
+        printf("Longer string: %s\n", str2);
+    } else {
+        printf("Both strings have the same length.\n");
+    }
+}
+
+int main() {
+    char str1[100], str2[100];
+
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+
+    printf("Enter the second string: ");
+    scanf("%s", str2);
+
+    findLongerString(str1, str2);
+
+    return 0;
+}
