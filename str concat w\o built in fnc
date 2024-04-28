@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+void stringConcatenate(char str1[], char str2[], char result[]) {
+    int i, j;
+
+    // Copy the first string (str1) into the result string
+    for (i = 0; str1[i] != '\0'; i++) {
+        result[i] = str1[i];
+    }
+
+    // Concatenate the second string (str2) to the end of the result string
+    for (j = 0; str2[j] != '\0'; j++) {
+        result[i + j] = str2[j];
+    }
+
+    // Add the null character '\0' to mark the end of the concatenated string
+    result[i + j] = '\0';
+}
+
+int main() {
+    char str1[100], str2[100], result[200];
+
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+
+    printf("Enter the second string: ");
+    scanf("%s", str2);
+
+    // Concatenate the strings
+    stringConcatenate(str1, str2, result);
+
+    // Print the concatenated string
+    printf("Concatenated string: %s\n", result);
+
+    return 0;
+}
